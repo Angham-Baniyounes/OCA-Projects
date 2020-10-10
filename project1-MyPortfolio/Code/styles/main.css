@@ -48,12 +48,16 @@
     display: inline-block;
     list-style: none;
 }
-.linkPage{
+.nav-bar .nav-menu .nav-item .linkPage{
     text-decoration: none;
-    cursor: pointer;
     width: 1.5rem;
     padding: 0.75rem;
     color:#fcfbfd;
+    justify-content: center;
+}
+.headerSide .nav-bar .nav-menu .nav-item .linkPage:hover{
+    cursor: pointer !important;
+    color: #090791 !important; 
 }
 .nav-item .active {
     border-bottom: 0.05rem solid #090791;
