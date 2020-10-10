@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <!-- internal Style -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        body {
+            background-image: url('../images/img-basic/a.jpg');
+            background-position: center;
+            background-attachment:fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            margin: 3rem auto;
+            height: 80vh;
+        }
+        /* header Style */
+        .header {
+            padding: 2rem auto;
+        }
+        .navbar {
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 0.5px solid #fcfbfda1;
+        }
+        .header .navbar .nav-item {
+            display: inline-block;
+            list-style: none;
+        }
+        .header .navbar .nav-item a {
+            text-decoration: none;
+            cursor: pointer;
+            width: 1.5rem;
+            padding: 0.5rem 5.75rem;
+            color:blue;
+        }
+        .header .navbar .nav-item .active {
+            color:#333;
+            font-weight: bold;
+            font-size: 1.75rem;
+            font-family:monospace;
+        }
+        /* Content Style */
+        .content {
+            width: 50vw;
+            margin: 5rem auto;
+        }
+        .content form  {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content form fieldset {
+            padding: 3rem 3rem 1rem;
+            border: blue 1.5px solid;
+        }
+        .content form fieldset legend {
+            color: blue;
+            font-size: 1.5rem;
+            background-color: #dddddda9;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        form fieldset input, form fieldset textarea, form fieldset button {
+            display: block;
+        }
+        form fieldset input{
+            height: 3rem;
+            width: 30rem;
+            background-color: #f0f0f071;
+            border: none;
+            padding-left: 2rem;
+            border-radius: 0.25rem;
+            border-bottom: 1.5px solid #555;
+            margin: 0.5rem auto;
+        }
+        form fieldset textarea{
+            height: 5rem;
+            width: 30rem;
+            background-color: #f0f0f071;
+            border: 1.5px solid #555;
+            margin: 2rem auto;
+            padding-top: 1.5rem;
+        }
+        form fieldset button{
+            height: 2.75rem;
+            width: 10rem;
+            background-color: #f0f0f071;
+            border: 1.5px solid #555;
+            margin: 0.5rem;
+            color: blue;
+            border-radius: 0.75rem;
+        }
+        /*footer Style*/
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            border-top: 0.5px solid #fcfbfda1;
+        }
+        .footer-items {
+            text-align: center;
+            display: grid;
+            justify-content: space-around;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 0.15px solid #fcfbfd49;
+            border-radius: 0.25rem;
+            padding-top: 2rem;
+        }  
+        .footer-items a {
+            text-decoration: none;
+        }
+        .footer-items a img {
+            width: 2rem;
+        }
+        /* media Query */
+    @media (max-width: 768px) {
+        body {
+            height: 100%;
+        }
+        .container {
+            height: auto;
+            margin: 1.5rem auto;
+        }
+        .header {
+            padding: 0.75rem;
+        }
+        .navbar {
+            font-size: 1.5rem;
+        }
+        .header .navbar .nav-item a {
+            padding: 1.25rem;
+            width: auto;
+        }
+        .header .navbar .nav-item .active {
+            font-size: 1.5rem;
+        }
+        .content {
+            margin: 2rem auto;
+        }
+        .content form fieldset {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+        .content form fieldset legend {
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
+        form fieldset input{
+            height: 2.5rem;
+            width: 28rem;
+            padding-left: 1.25rem;
+        }
+        form fieldset textarea{
+            height: 4rem;
+            width: 28rem;
+            margin: 1.15rem auto;
+            padding-top: 1.5rem;
+        }
+    }
+    @media (max-width: 600px) {
+        body {
+            height: 100%;
+        }
+        .container {
+            height: auto;
+            margin: 1.5rem auto;
+        }
+        .header {
+            padding: 0.75rem;
+        }
+        .navbar {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+        .header .navbar .nav-item a {
+            padding: 0.5rem;
+            width: auto;
+        }
+        .header .navbar .nav-item .active {
+            font-size: 1.5rem;
+        }
+        .content {
+            margin: 2rem auto;
+        }
+        .content form fieldset {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+        .content form fieldset legend {
+            font-size: 0.75rem;
+            padding: 0.5rem;
+        }
+        form fieldset input{
+            height: 2.5rem;
+            width: 28rem;
+            padding-left: 1.25rem;
+        }
+        form fieldset textarea{
+            height: 4rem;
+            width: 28rem;
+            margin: 1.15rem auto;
+            padding-top: 1.5rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <ul class="navbar">
+                <li class="nav-item"><a href="../index.html" target="_blank">About</a></li>
+                <li class="nav-item"><a href="../pages/myProjects.html" target="_blank">Projects</a></li>
+                <li class="nav-item"><a href="../pages/mySkills.html" target="_blank">Skills</a></li>
+                <li class="nav-item"><a class="active" href="#" target="_self">Contact Me</a></li>
+            </ul>
+        </header>
+        <section class="content">
+            <form action="#" method="GET">
+                <fieldset>
+                    <legend>Your Message</legend>
+                    <input type="text" name="name" placeholder="Enter Your Name" autofocus required>
+                    <br>
+                    <input type="email" name="email" placeholder="Enter Your Email" required>
+                    <br>
+                    <textarea name="message" rows="10" cols="30">
+                        Your message.....
+                    </textarea>
+                    <button type="submit">Send</button>
+                </fieldset>
+            </form>
+        </section>
+        <footer class="footer">
+            <div class="footer-items">
+                <a href="https://api.whatsapp.com/send/?phone=962776084114" target="_blank">
+                    <img src="../images/img-icons/mobile.png" alt="mobile-number">
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?tab=wm&ogbl#inbox" target="_blank">
+                    <img src="../images/img-icons/gmail.png" alt="gmail">
+                </a>
+                <a href="https://github.com/Angham-Baniyounes" target="_blank">
+                    <img src="../images/img-icons/github.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/angham-baniyounes/" target="_blank">
+                    <img src="../images/img-icons/linkedin.png" alt="linkedIn">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
