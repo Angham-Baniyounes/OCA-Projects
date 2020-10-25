@@ -1,0 +1,148 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    background-color: lightblue;
+    /* color: white; */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* min-height: 100vh; */
+  
+}
+footer {
+    text-align: center;
+    top: 95vh;
+    position: -webkit-sticky;
+    position: sticky;
+    color: whitesmoke;
+  }
+*{
+    box-sizing: border-box;
+    font-family: "sofia";
+}
+.box{
+    display: grid;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 3rem 0 3rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.style {
+    font-weight: bolder;
+    color: yellowgreen ;
+}
+
+.input-for-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    max-width: 60%;
+    margin: auto;
+}
+
+#input {
+    padding: 0.5rem 1rem;
+    height: 50px;
+    border: 1px solid yellowgreen;
+    background-color: whitesmoke;
+    /* width: 400px; */
+    margin: 0.5rem;
+    border-radius: 30px;
+    flex-grow: 2;
+}
+
+#addButton {
+    height: 60px;
+    width: 60px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: rgb(167, 224, 53);
+    color: white;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.addButton:hover {
+    opacity: 0.7;
+    background-color: yellowgreen;
+}
+
+#container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    /* width: 100vw; */
+}
+
+.item {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid whitesmoke;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    /* width: 200px; */
+}
+
+.item-input {
+    background: none;
+    outline: none;
+    color: whitesmoke;
+    border: none;
+    /* width: 20rem; */
+    font-size: 1.5rem;
+    
+}
+
+.editButton{
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    background: none;
+    outline: none;
+    color: rgb(3, 158, 3);
+    border: none;
+    cursor: pointer;
+
+    /* flex-grow: 1; */
+}
+
+.removeButton {
+    font-size: 1.2rem;
+    background: none;
+    outline: none;
+    color: red;
+    border: none;
+    cursor: pointer;
+    /* flex-grow: 1; */
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+body {
+    height: min-content;
+    width: min-content;
+}
+
+}

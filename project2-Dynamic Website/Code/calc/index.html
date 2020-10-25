@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link id="pagestyle" rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/mainStyle.css"/>
+    <script defer>
+      function checktheme() {
+        
+        localStorage.getItem("theme") ? document.getElementById("pagestyle").setAttribute("href", localStorage.getItem("theme")) : document.getElementById("pagestyle").setAttribute("href", "style/style.css");
+      }
+      checktheme();
+    </script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!--[if lt IE 9]>
+      <script src="scriptsFiles/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="body">
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <div id="menu">
+          <a href="../index.html">Home</a>
+          <a href="../todo/index.html">To-Do</a>
+          <a href="">Calcolater</a>
+          <div class="dropdown">
+            <a class="dropbtn">Select Theme </a>
+            <div class="dropdown-content">
+              <a href="" onclick="switchStyle('style/style.css')">default</a>
+              <a href="" onclick="switchStyle('style/style2.css')">Light</a>
+              <a href="" onclick="switchStyle('style/style3.css')">Dark</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../todo/index.html">To-Do</a></li>
+        <li class="here"><a href="">Calcolater</a></li>
+        <li class="theme">
+          <div class="dropdown">
+            <a class="dropbtn">Select Theme </a>
+            <div class="dropdown-content">
+              <a href="" onclick="switchStyle('style/style.css')">default</a>
+              <a href="" onclick="switchStyle('style/style2.css')">Light</a>
+              <a href="" onclick="switchStyle('style/style3.css')">Dark</a>
+            </div>
+          </div>
+        </li>
+        <li class="fontUP"><a onclick="fontup('+')">A+</a></li>
+        <li class="fontUP"><a onclick="fontup('-')">A-</a></li>
+      </ul>
+    </div>
+    <div class="container containerCal">
+      <div class="calculator">
+        <div class="display">
+          <div class="inputScr" id="inputScr"></div>
+          <div class="resultScr" id="resultScr"></div>
+        </div>
+        <div class="rows first">
+          <button class="opr btn" id="powerBtn" data-operator="^">^</button>
+          <button class="btn" id="deleteBtn">&#8592;</button>
+          <button class="btn" id="clearBtn">C</button>
+        </div>
+        <div class="rows">
+          <button class="opr btn" id="factorialBtn" data-operator="!">!n</button>
+          <button class="btn" id="absoluteBtn">|x|</button>
+          <button class="opr btn" id="modBtn" data-operator="%">&#x25;</button>
+          <button class="opr btn" data-operator="+">&#x2b;</button>
+        </div>
+        <div class="rows">
+          <button class="num btn" data-number="1">1</button>
+          <button class="num btn" data-number="2">2</button>
+          <button class="num btn" data-number="3">3</button>
+          <button class="opr btn" data-operator="-">&#x2212;</button>
+        </div>
+        <div class="rows">
+          <button class="num btn" data-number="4">4</button>
+          <button class="num btn" data-number="5">5</button>
+          <button class="num btn" data-number="6">6</button>
+          <button class="opr btn" data-operator="*">&#xd7;</button>
+        </div>
+        <div class="rows">
+          <button class="num btn" data-number="7">7</button>
+          <button class="num btn" data-number="8">8</button>
+          <button class="num btn" data-number="9">9</button>
+          <button class="opr btn" data-operator="/">&#247;</button>
+        </div>
+        <div class="rows">
+          <button class="num btn" data-number="0">0</button>
+          <button class="btn" id="negative" data-sign="-/+"><sup>+</sup>/<sub>-</sub></button>
+          <button class="btn" id="equalBtn" data-equal="=">&#x3d;</button>
+        </div>
+      </div>
+    </div>
+      <footer>
+        <h2>Copyright OCA Jordan</h2>
+      </footer>
+    <script src="script/mainCal.js"></script>
+    <script src="script/calc.js"></script>
+  </body>
+</html>

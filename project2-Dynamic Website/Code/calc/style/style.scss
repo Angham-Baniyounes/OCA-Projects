@@ -1,0 +1,118 @@
+$bgColor: rgba(98, 195, 252, 0.486);
+$mainColor: darkslategray;
+$secColor:  #87b8d4;
+$thrColor: #B2E1FD;
+$fontColor:   whitesmoke;
+$operBtnColor: yellowgreen;
+$fullwidth: 100%;
+$mainBorder: 2px solid #96c7e4;
+$fontSize: 1.75em;
+$bSize: 1em;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $bgColor;
+    color: $fontColor;
+    .container {
+        width: 40.625rem;
+        margin: 3rem auto;
+        .calculator {
+            width: 26em;
+            margin: 3em auto;
+            padding: $bSize ($bSize + 0.5em);
+            border: 2px solid $mainColor;
+            border-radius: $bSize;
+            background-color: $mainColor;
+            .display {
+                width: $fullwidth;
+                height: $bSize * 7;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                .inputScr {
+                    padding: $bSize - 0.4em;
+                    font-size: $bSize + 0.25em;
+                    text-align: left;
+                }
+                .resultScr { 
+                    padding: 0.25em 0.94em;
+                    font-size: $bSize;
+                    text-align: right;
+                }
+            }
+            .first {
+                margin-top: $bSize + 0.25em;
+                .btn {
+                    background-color: $secColor;
+                    border: 2px solid $secColor;
+                    color: whitesmoke;
+                    font-size: $fontSize;
+                    border-radius: $bSize - 0.25em;
+                }
+                .btn:last-child {
+                    border-radius: $bSize;
+                }
+            }
+            .row {
+                width: $fullwidth;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr;
+                grid-gap: $bSize;
+                margin-bottom: $bSize;
+                .btn {
+                    grid-gap: $bSize;
+                    padding: $bSize - 0.55em;
+                    font-size: $fontSize;
+                    color: whitesmoke;
+                }
+                .btn:hover {
+                    box-shadow: 2px 2px 40px rgb(226, 220, 220) ,
+                                -2px -2px 40px rgb(226, 220, 220);
+                    transform: scale(1.1);
+                }
+            }
+            .row:nth-of-type(2) .btn:last-child {
+                grid-column-start: 3;
+                grid-column-end: 5;
+            }
+            .row:nth-child(n+3):nth-child(-n+6) .btn:last-child {
+                background-color: $operBtnColor;
+                border: 2px solid $operBtnColor;
+                border-radius: $bSize - 0.5em;
+                font-size: $fontSize;
+            }
+            .row:nth-child(n+3):nth-child(-n+6) .btn:nth-child(n+1):nth-child(-n+3) {
+                background-color: transparent;
+                border-radius: 50%;
+                border: $mainBorder;
+            }
+            
+            .row:last-child .btn {
+                font-weight: bolder;
+                border: $mainBorder;
+            }
+            .row:last-child .btn:first-child {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            .row:last-child .btn:first-child {
+                border-radius: $bSize;
+            }
+            .row:last-child .btn:not(:first-child) {
+                border-radius: $bSize - 0.25em;
+            }
+            .row:last-child .btn:not(:nth-child(2)) {
+                background-color: $thrColor;
+                color: whitesmoke;
+            }
+            .row:last-child .btn:nth-child(2) {
+                background-color: transparent;
+                border: $mainBorder;
+            }
+        }
+    }
+}

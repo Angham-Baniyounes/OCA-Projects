@@ -1,0 +1,168 @@
+<!DOCTYPE  html>
+<html  lang="en">
+
+<head >
+    <link  id="pagestyle" rel="stylesheet" href="style/style.css">
+    <link  id="pagestyle" rel="stylesheet" href="style/popup.css">
+    <meta name="description" content="Dynamic WebSite conain form application"/>
+<script defer>
+    function checktheme(){
+
+    (localStorage.getItem("theme"))? document.getElementById('pagestyle').setAttribute('href', localStorage.getItem("theme")) : document.getElementById('pagestyle').setAttribute('href', "style/style.css");
+}
+
+checktheme();
+</script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Regestraion</title>
+
+
+
+
+</head>
+
+<body onload="cheekData()"  id="body">
+
+
+
+    <nav role="navigation">
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="menu">
+                <a  href="">Home</a>
+                <a href="todo/index.html">To-Do</a>
+                <a href="calc/index.html">Calcolater</a>
+
+                <div class="dropdown">
+                    <a class="dropbtn">Select Theme </a>
+
+
+                    <div class="dropdown-content">
+                        <a href="" onclick="switchStyle('style/style.css')">default</a>
+                        <a href="" onclick="switchStyle('style/style2.css')">Light</a>
+                        <a href="" onclick="switchStyle('style/style3.css')">Dark</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="nav">
+        <ul>
+            <li class="here" ><a  href="">Home</a></li>
+            <li><a href="todo/index.html">To-Do</a></li>
+            <li><a href="calc/index.html">Calcolater</a></li>
+            <li class="theme">
+                <div class="dropdown">
+                    <a class="dropbtn">Select Theme </a>
+
+
+                    <div class="dropdown-content">
+                        <a href="" onclick="switchStyle('style/style.css')">default</a>
+                        <a href="" onclick="switchStyle('style/style2.css')">Light</a>
+                        <a href="" onclick="switchStyle('style/style3.css')">Dark</a>
+                    </div>
+                </div>
+            </li>
+            <li class="fontUP"><a onclick="fontup('+')">A+</a></li>
+            <li class="fontUP"><a onclick="fontup('-')">A-</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="container">
+        <form action="">
+            <h1>Personal Info</h2>
+            <div class="sub">
+
+                <input onchange="check()" onkeyup="check()" id="Name" placeholder="Full Name" required type="text">
+                <input onchange="check()" onkeyup="check()" id="E-mail" placeholder="E-mail address" required
+                    type="email" >
+                <input onchange="check()" onkeyup="check()" id="DOB" placeholder="Date of Birth" required type="date"
+                    >
+                <input onchange="check()" onkeyup="check()" id="Mobile" placeholder="Mobile" required type="tel" name=""
+                    id="">
+                <input onchange="check()" onkeyup="check()" id="Password" placeholder="Password" required
+                    type="password" >
+                <select id="select">
+                    <option selected hidden>Select Storge location.</option>
+                    <option value="Local Storge">Local Storge</option>
+                    <option value="Session Storge">Session Storge</option>
+
+                </select>
+                <div class="agreement">
+
+                    <input id="cheek" onclick="check()" type="checkbox"> I agree to the <a href="#">Terms and
+                        Conditions</a>
+                    and <a href="#">Privacey Policy</a>
+                </div>
+
+                <div class="buttoms">
+
+                    <input onclick="myfunction()" class="dis" id="submit" type="submit" value="submit">
+                    <input onclick="clearData()" class="dis" id="clear" type="reset" value="Clear">
+
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+        <div id="myModal" class="modal">
+
+            
+            <div  class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h3>Data Found</h3>
+              </div>
+              <div class="modal-body">
+                <p id ="popupName">Name</p>
+                <p id ="popupEmail">email</p>
+                <p id ="popupDOB">Date of birth</p>
+                <p id ="popupMobile">Mobile</p>
+                <p id ="popupPassword">Password</p>
+                <!-- <p id ="popupName"></p> -->
+                
+                
+              </div>
+              <div class="modal-footer">
+                <p id="footerName">Name</p>
+                <p id="footerEmail">email</p>
+                <p id="footerDOB">Date of birth</p>
+                <p id="footerMobile">Mobile</p>
+                <p id="footerPassword">Password</p>
+              </div>
+            </div>
+          
+          </div>
+
+
+    </div>
+
+
+    <footer>
+        <h2>Copyright OCA Jordan</h2>
+    </footer>
+
+    <script   src="script/script.js"></script>
+
+</body>
+
+</html>

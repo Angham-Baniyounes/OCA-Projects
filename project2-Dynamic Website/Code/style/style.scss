@@ -1,0 +1,166 @@
+$Primry-Color :rgba(98, 195, 252, 0.534);
+$background-1 : "img/backround1.jpg";
+$submit:rgba(6, 192, 6, 0.712);
+$clear:rgba(243, 26, 26, 0.712);
+
+*{
+    // padding: 10px;
+    box-sizing: border-box;
+    font-family: "Sofia";
+    
+  
+}
+
+html{
+    height: 100%;
+}
+
+::placeholder {
+    color: whitesmoke;
+
+}
+
+body {
+
+    
+  
+
+
+height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image:url( $background-1);
+    background-size: cover;
+    
+}
+.nav{
+position: sticky;
+top: 0;
+    width: 100%;
+}
+ul{
+    height: 100%;
+    overflow: hidden;
+    
+  
+    margin: 0;
+    background-color: $Primry-Color;
+}
+li{
+    float: left;
+    /* margin: 5px; */
+    list-style: none;
+padding: 10px  ;
+}
+a{
+display: block;
+    text-decoration: none;
+    color : ghostwhite
+}
+
+.theme{
+    float: right;
+    background-color: yellowgreen;
+   
+    
+}
+
+h2{
+    padding-left: 10px;
+    color: white;
+  
+}
+
+.container{
+  
+
+    justify-content: center;
+    display: flex;
+    padding: 15px;
+}
+
+.sub{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    // background-color: $Primry-Color;
+    border-radius: 15px;
+    padding: 10px;
+// height: 80vh;
+    background-image: url(img/back2.PNG);
+    box-shadow: white 0px 0px 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50rem;
+    border-radius: 15px;
+    padding: 10px;
+  
+}
+
+.buttoms{
+    display: flex;
+    
+}
+
+.buttoms input{
+    flex-grow: 1;
+    margin: 10px;
+}
+
+input , select{
+    font-size: 1.25rem;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color: $Primry-Color;
+    color: whitesmoke;
+}
+
+.agreement{
+    color: whitesmoke;
+    font-weight: bolder;
+}
+.agreement a{
+display: initial;
+color: yellowgreen;
+}
+
+
+.active{
+    cursor: pointer;
+    color: white;
+background-color: $submit;
+}
+
+footer{
+  text-align: center;
+  top: 95vh;
+  position: sticky;
+  
+}
+
+
+.dis {
+    pointer-events: none;
+    cursor: default;
+    background-color: lightgrey;
+   
+   
+
+  
+
+
+    color: white;
+
+}
+
+.clear{
+    cursor: pointer;
+    color: white;
+    background-color: $clear;
+}
