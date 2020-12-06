@@ -1,0 +1,50 @@
+.w-youtubeVideos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 30rem;
+  border: dashed 3px #6f2a8e;
+  grid-gap: 1rem;
+  width: 75%;
+  margin: auto;
+  /* background-color: #fafafa; */
+  /* opacity: 0.7; */
+}
+
+.w-iframeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .w-youtubeVideos {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 40rem;
+    border: none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 786px) {
+  .w-youtubeVideos {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 40rem;
+    border: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* .w-youtubeVideos {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 40rem;
+    border: none;
+  } */
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* .w-youtubeVideos {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 40rem;
+    border: none;
+  }*/
+}

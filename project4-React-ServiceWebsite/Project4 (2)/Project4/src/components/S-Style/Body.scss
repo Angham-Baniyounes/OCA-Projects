@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;700&display=swap");
+:root {
+  --Font-Family: "Dosis", sans-serif;
+  --font-color: #333;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--Font-Family);
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.Card-Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5vmax;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+.Card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .CardBody {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 42vmax;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 20px 1px #ccc;
+    transition: all 0.1s;
+    &:hover {
+      box-shadow: 0 0 5px 1px #ccc;
+    }
+  }
+  .Item1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media screen and (min-width: 120px) and (max-width: 786px) {
+  .Card-Container {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 786px) {
+}
+@media screen and (min-width: 769px) and (max-width: 1210px) {
+  .Card-Container {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 1020px) and (max-width: 1200px) {
+}
+@media screen and (min-width: 1201px) {
+}

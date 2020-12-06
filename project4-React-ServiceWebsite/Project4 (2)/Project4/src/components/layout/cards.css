@@ -1,0 +1,26 @@
+/* .w-grid-container {
+  width: 100%;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.w-grid-items {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.w-img-item img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.w-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */

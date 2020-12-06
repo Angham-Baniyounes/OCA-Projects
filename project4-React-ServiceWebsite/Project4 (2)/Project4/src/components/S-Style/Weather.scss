@@ -1,0 +1,14 @@
+@import "./Body.scss";
+
+.Weather-Container {
+  text-align: center;
+  margin: 3rem;
+}
+.Item {
+  padding: 0.5rem;
+  font-size: 1.5em;
+  text-align: center;
+  i {
+    font-size: 3em;
+  }
+}
