@@ -1,0 +1,44 @@
+:root {
+  --div-primary-colors: #c71e01;
+  --div-secondary-color: #fe9e47;
+  --div-button: #6f7219;
+}
+
+.header-section {
+  background: url(https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)
+    no-repeat scroll center center;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.list-only {
+  color: var(--div-secondary-color);
+}
+.list-price {
+  color: var(--div-secondary-color);
+  position: absolute;
+  left: 200px;
+}
+@media screen and (max-width: 480px) and (min-width: 260px) {
+  .list-price {
+    color: white;
+    position: absolute;
+    left: 200px;
+    font-weight: bolder;
+    box-shadow: white 1px 1px 4px 4px;
+    border-radius: 5px;
+  }
+}
+@media screen and (width: 1024px) {
+.beef-burger{
+  font-size: 2rem;
+  margin-bottom: 13rem;
+}
+.list-price {
+  left: 320px;
+}
+}

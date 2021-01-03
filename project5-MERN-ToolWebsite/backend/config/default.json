@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "mongodb+srv://osama:asas1212asas@orangedev.y4cxj.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret" : "burgertagsecret"
+}

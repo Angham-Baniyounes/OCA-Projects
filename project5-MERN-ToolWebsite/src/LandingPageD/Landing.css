@@ -1,0 +1,91 @@
+:root {
+  --div-primary-colors: #c71e01;
+  --div-secondary-color: #fe9e47;
+  --div-button: #6f7219;
+}
+.landing-section {
+  background: url(./pexels-photo-361622956.jpg) no-repeat scroll center center;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  text-align: left;
+}
+
+.header-landing,
+.landing-paragraph {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Source Serif Pro", serif;
+}
+.inner-section {
+  margin-bottom: 13%;
+}
+.header-landing {
+  font-size: 50px;
+}
+
+.landing-paragraph {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-danger {
+  background-color: var(--div-secondary-color);
+  border: none !important;
+  font-weight: 500;
+  color: white !important;
+}
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:visited,
+.btn-danger:focus {
+  background-color: #ffbd09 !important;
+  border: none !important;
+  /* border-color: #bfcbd2 !important; */
+  /* color: black; */
+}
+
+/* .test{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.navigate-down {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  color: #cc9809;
+  cursor: pointer;
+  font-size: 5rem;
+}
+
+.navigate-down:hover {
+  color: #ffbd09;
+  font-size: 5.2rem;
+}
+@media screen and (max-width: 480px) and (min-width: 260px) {
+  .inner-section {
+    margin-bottom: 70%;
+    font-size: 15px;
+  }
+  .Logo {
+    width: 6rem;
+  }
+  .navigate-down {
+    position: absolute;
+    bottom: 1%;
+    right: 10%;
+    color: rgb(0, 102, 128);
+    cursor: pointer;
+    font-size: 5rem;
+  }
+  .list-price {
+    color: white;
+  }
+}

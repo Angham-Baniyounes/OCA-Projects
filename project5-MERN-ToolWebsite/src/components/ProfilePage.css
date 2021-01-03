@@ -1,0 +1,118 @@
+.Profile .weatherAndlocation-container {
+  text-align: right;
+  padding: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.Profile .weatherAndlocation-container .weather-container {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.Profile
+  .weatherAndlocation-container
+  .weather-container
+  .background-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  border-radius: 100%;
+  margin-bottom: 2rem;
+}
+
+.Profile
+  .weatherAndlocation-container
+  .weather-container
+  .background-container
+  .flex-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.Profile .weatherAndlocation-container i {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.Profile .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: -100px;
+}
+
+.Profile .img-container .img {
+  background-image: url("https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg");
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+  position: relative;
+}
+
+.Profile .img-container .img i {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  font-size: 1.1rem;
+  border-radius: 100%;
+  background-color: #333;
+  color: white;
+  padding: 8px;
+}
+
+.Profile .info-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.Profile .info-container .Profile-name {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.Profile .ServicesCom {
+  margin: 2rem;
+}
+
+.Profile .ServicesCom h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .ServicesCom {
+    margin: 0 !important;
+  }
+}

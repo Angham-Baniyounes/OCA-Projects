@@ -1,0 +1,15 @@
+.Right {
+  margin-left: auto !important;
+}
+.Logo {
+  object-fit: contain;
+  height: 5.5rem;
+}
+.nav-link {
+  color: #FE9E47 !important;
+  font-size: 1.3rem;
+  padding-right: 1rem !important;
+}
+.nav-link:hover {
+  color: #9c9b9a !important;
+}

@@ -1,0 +1,38 @@
+.food__container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+}
+.Space__bet {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  padding: 0.2rem;
+  bottom: 3px;
+  right: 3px;
+}
+.MuiCard-root {
+  position: relative !important;
+}
+.MuiCardContent-root {
+  margin-bottom: 30px;
+}
+.MuiCardContent-root {
+  padding: 1rem 1rem 0 1rem;
+}
+.MuiButton-root {
+  outline: none !important;
+}
+
+.MuiButtonBase-root {
+  outline: none !important;
+}
+
+.MuiTypography-root {
+  text-align: left;
+}
+/* .MuiPaper-rounded {
+  border-top: 0.5px solid rgb(235, 235, 235);
+} */

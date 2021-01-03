@@ -1,0 +1,55 @@
+:root {
+  --div-primary-colors: #c71e01;
+  --div-secondary-color: #fe9e47;
+  --div-button: #6f7219;
+}
+.location-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 20vh;
+  margin: 70px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 7rem;
+}
+.location-head {
+  grid-column: 1 / span2;
+}
+.location-paragraph {
+  color: var(--div-secondary-color);
+  font-size: 30px;
+}
+
+.location-header {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+.location-hours {
+  color: var(--div-secondary-color);
+  font-size: large;
+}
+@media only screen and (max-width: 769px) {
+  .location-section {
+    margin-bottom: 12rem;
+  }
+  .website-rights {
+    margin-left: 0;
+  }
+}
+@media only screen and (width: 280px) {
+  .location-section {
+    font-size: 1rem;
+    margin-bottom: 14rem;
+  }
+  .website-rights {
+    margin-left: 0;
+  }
+  .location-header{
+    font-size: 1.5rem;
+  }
+  .location-paragraph{
+    font-size: 1rem;
+  }
+}
