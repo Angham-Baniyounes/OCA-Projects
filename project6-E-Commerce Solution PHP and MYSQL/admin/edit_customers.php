@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($tmp_name, $path);
         // header("location:manage_customers.php");
     } else {
-        $customer_image = $customer_image_src;
+        $path = $customer_image_src;
     }
 
 

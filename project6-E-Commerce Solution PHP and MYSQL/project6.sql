@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2021 at 01:18 AM
+-- Generation Time: Feb 07, 2021 at 03:21 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -40,9 +40,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_image`) VALUES
-(4, 'test', 'meduwudefe@mailinator.com', 'Pa$$w0rd!', '../images/product-min-03.jpg'),
-(5, 'Nissim Salazar', 'cuzoh@mailinator.com', 'Pa$$w0rd!', '../images/product-07.jpg'),
-(6, 'Jameson Suarez', 'vopipahawy@mailinator.com', 'Pa$$w0rd!', '../images/product-detail-01.jpg');
+(4, 'Monther', 'meduwudefe@mailinator.com', 'Pa$$w0rd!', '../images/banner-02.jpg'),
+(5, 'Ahmad', 'ahmad@gmail.com', 'Pa$$w0rd!', '../images/product-min-02.jpg'),
+(6, 'Dana', 'vopipahawy@mailinator.com', 'Pa$$w0rd!', '../images/product-10.jpg');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,8 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `total`, `order_type`, `purchas
 (38, 4, 2400, 'Cash on Delivery', '2021-02-06'),
 (39, 6, 86, 'Cash on Delivery', '2021-02-06'),
 (42, 6, 1070, 'Cash on Delivery', '2021-02-07'),
-(43, 6, 4824, 'Cash on Delivery', '2021-02-07');
+(43, 6, 4824, 'Cash on Delivery', '2021-02-07'),
+(44, 6, 80, 'Cash on Delivery', '2021-02-07');
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,8 @@ INSERT INTO `order_products` (`order_products_id`, `order_id`, `product_id`, `qu
 (72, 42, 39, 1),
 (73, 42, 10, 5),
 (74, 43, 11, 1),
-(75, 43, 40, 4);
+(75, 43, 40, 4),
+(76, 44, 66, 1);
 
 -- --------------------------------------------------------
 
@@ -256,7 +258,23 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `discount
 (65, 'Huawei Y7P', 400, 1, 'Huawei Mobile Y7P Aurora Blue Y7PBL   6.39 Inches HD  Octa-core Kirin 710 - 4GB RAM + 64GB ROM EMUI 9.1 Non-removable Li-Po 4000 mAh Battery Front Camera : 8 MP Rear Camera : 48 MP & 8 MP & 2 MP Fingerprint Warranty: 1 Year* *Terms and conditions apply ', '../images/products/huawei-mobile3.jpg', 100, 16, 15),
 (66, 'HUAWEI Y9', 399, 0.8, 'Two-day delivery on all in-stock items excluding orders made on Thursday, during the week end or official holidays. Which will be processed on the first working day after holiday. Delivery service is available inside Jordan only (Except for Aqaba). For More information you may check Shipping Policy: https://huaweieshop.jo/shipping-policy', '../images/products/huawei-mobile4.jpg', 100, 16, 15),
 (67, 'Godwin Cachepot Plant', 30, 1, 'GODWIN CACHEPOT By Longhi Collection Loveluxe 2020 – Sartoria collection Type Round plant pot Materials Leather, Fiberglass (GRP) Designers Giuseppe Iasparra Manufacture year 2013 Product code Y 712 Godwin cachepot is a cachepot for potted plants and flowers.‎ Fiberglass structure covered in leather or fabric from the catalogue.‎ Metal base and top in the finishes: - bright light gold, - matt Champagne gold, - bright chrome, - bright black chrome, - matt satin bronze, - bright pink gold, - matt pink gold.‎', '../images/products/plant6.jpg', 100, 17, 16),
-(68, 'Ruini Flower pot', 40, 0.7, 'Modular plant pot made of steel, perfect for outdoor environments.‎  FEATURES: - Modular - Internal support for the flowerpot - Perfect for outdoor environments - Steel structure, accessories and bowl - Lateral holes for a pratical movements - Anti-slip pads - The magnetic tray is always anchored, ensuring the movement - Customizable', '../images/products/plan5.jpg', 100, 17, 16);
+(68, 'Ruini Flower pot', 40, 0.7, 'Modular plant pot made of steel, perfect for outdoor environments.‎  FEATURES: - Modular - Internal support for the flowerpot - Perfect for outdoor environments - Steel structure, accessories and bowl - Lateral holes for a pratical movements - Anti-slip pads - The magnetic tray is always anchored, ensuring the movement - Customizable', '../images/products/plan5.jpg', 100, 17, 16),
+(69, 'STRATUM | Corner sofa', 1000, 1, 'STRATUM is a modular sofa consisting of two layers.‎ LAYER 1: Sofa with internal wooden structure with polyurethane foam padding and seat cushions in non-deformable polyurethane.‎ Removable cushions and frame cover.‎ Straight module with 1 arm left/right.‎ LAYER 2: Sofa with internal wooden structure with polyurethane foam padding and seat cushions in non-deformable polyurethane.‎ Removable cushions and frame cover.‎ Deeper modules with wing to connect to Layer 1.‎', '../images/products/fur1.jpg', 100, 18, 17),
+(70, 'Classic Chair', 50, 1, 'Were head over heels in love with contemporary design and superb quality. We literally search the world to bring you the very best in selection, style and quality, then back it with unmatched customer service and design advice.  The way we see it, lifes too short for dull, boring furniture. ', '../images/products/fur2.jpg', 100, 18, 17),
+(71, 'Senso Sofa - Cognac', 600, 1, 'With its solid wood feet and a two-tone color variation in the supple leather cover, the Senso sofa will give a touch of originality to your living room. This Italian-made sofa is great for lounging and it features comfortable seats with adjustable headrests. ', '../images/products/fur3.jpg', 100, 18, 17),
+(72, 'Ray Dining Chair', 30, 1, 'The Ray dining chair is all Italian-made with the best top grain leather.  We stock the Ray dining chair in Light Grey leather with legs in Anthracite powder-coat.', '../images/products/fur4.jpg', 100, 18, 17),
+(73, 'Reclining Chair', 200, 1, 'The Sorento is a new and luxurious, Italian-made recliner chair. The quality of the design, the materials and the craftsmanship represents an incredible value, and the comfort is extraordinary. The Sorento chair features a motorized reclining seat. ', '../images/products/fur6.jpg', 100, 18, 17),
+(74, 'Diavoletti Family', 350, 1, 'The Diavoletti Family by Daniel Eltner is a collection of three different vases, each with a distinct colour.‎ Red Diavoletto, pink Diavoletta and yellow Diavoletto form an enigmatic contemporary tryptic, an ironic reinterpretation of the symbolic talisman through which to exorcise the trials and tribulations of everyday life.‎ Made of ceramic, the Diavoletti Family vases have a matte exterior and glossy interior, and are made using ancient techniques from the 1700s.‎ The elements appear bizarre and surreal, inspired by the idols from the Cycladic civilization on the island of Mykonos.‎', '../images/products/vase1.jpg', 100, 19, 17),
+(75, 'Hineri', 20, 1, 'Type Marble vase Materials Marble Designers Setsu & Shinobu Ito Manufacture year 2020 Product code GA286 / GA287 / GA288 / GA289 HINERI is sculpture-vase consisting of a twisted cylinder in Carrara and Nero Marquina marble, design by Setsu & Shinobu Ito.‎', '../images/products/vase2.jpg', 100, 19, 17),
+(76, 'Gli Oggetti - RIPS', 35, 1, 'When used as a flower vase Rips merges harmoniously with its contents, highlighting their shapes and colours.‎ The outer surface is decorated with a motif of diagonal lines in relief that create an optical effect which is emphasised by the water and branches in the vase.‎ The oblique lines make the surface three dimensional and underline the beauty of the blown glass in an original way, as if they were lines of stitching on leather.‎ The relief has two different directions, which follow the three main sections of the object, highlighting the vases variations in volume.‎', '../images/products/vase4.jpg', 100, 19, 17),
+(77, 'Wall-mounted steel clock', 10, 1, 'Dont lose another minute! Tolix reveals Tolix Time, a colorful clock.‎ Minimalist yet playful in design, it lights up the wall in a bedroom, the kitchen or a bathroom.‎ Made using metal pieces that are assembled together in a round shape, the wall clock is available in all colors and can be made of 2 or 3 parts.‎  Monochrome, two-color, or three-color, with a perforated section or completely solid, Tolix Time offers an infinite number of combinations.‎ No more excuses for being late.‎ And every reason to sit and watch time go by.‎', '../images/products/clock2.jpg', 100, 20, 17),
+(78, 'Stamped plate clock', 50, 1, 'Type Wall-mounted Stamped plate clock Materials Stamped plate Manufacture year 2020 Product code IT910 The Monet wall clock is a tribute to the creativity of the famous French painter.‎  Materials: Laser-cut, bent, powder-coated metal sheet, digital high-resolution print', '../images/products/clock3.jpg', 100, 20, 17),
+(79, 'wooden clock', 40, 1, 'Type Wall-mounted wooden clock Materials Wood Designers Opaca Lab Manufacture year 2019 Product code T7951 An twist of wood and metal for an analogue clock in the name of simplicity and design.‎ A needle in satin gold finish to give a just touch of class.‎', '../images/products/clock4.jpg', 100, 20, 17),
+(80, 'Light Blue Tay Clock', 45, 1, 'Vulcano is the wall-clock that reminds us that time always depends on the laws of nature: beautiful and feared, the volcanos are built during the centuries, eruption after eruption, layer after layer.‎ The design and the form of Vulcano tell the perfection of the universe and its equilibrium that is always changing, uniting natural and precious wood species to the passing of time that moulds everything.‎ The clean and minimal design makes Vulcano suitable for different spaces of the house, from the living to the kitchen, to the office.‎', '../images/products/clock5.jpg', 100, 20, 17),
+(81, 'Casamania & Horm', 600, 1, 'Collection Summit Type 2 seater fabric sofa Materials Fabric Designers Giulio Iacchetti Manufacture year 2015 Summit Standard is a 2 seater fabric sofa.‎ Structure composed of black painted metal frame with mdf bottoms.‎ Upholstered in leather, faux leather or fabric.‎', '../images/products/clock6.jpg', 100, 18, 17),
+(82, 'Calligaris', 30, 1, 'CIRCLES By Calligaris Type Metal plant pot / pedestal Materials Metal Designers Busetti Garuti Redaelli Metal plant pot / pedestal.‎', '../images/products/plant2.jpg', 100, 17, 16),
+(83, 'Window Garden Plant', 35, 1, 'ollection Window garden Type Porcelain vase system for hydroponic cultivation Materials Porcelain Designers BIG - Bjarke Ingels Group Manufacture year 2016 Window garden pendant is an intelligent irrigation system incorporated into high-pressure cast porcelain vases.‎ The vases themselves are designed to allow for hydroponic cultivation and each one has a small indentation around its circumference where a steel wire fixes it to the structure.‎', '../images/products/plant1.jpg', 100, 17, 16),
+(84, 'Paola Lenti', 25, 1, 'Type Stainless steel plant pot Materials Stainless steel Designers Bestetti Associati Studio Rectangular and round planter cover available in different dimensions.‎ Structure made of varnished stainless steel.‎', '../images/products/plant3.jpg', 100, 17, 16);
 
 -- --------------------------------------------------------
 
@@ -278,7 +296,9 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`review_id`, `customer_id`, `products_id`, `review`) VALUES
 (1, 6, 11, 'wow very good'),
 (2, 6, 11, 'Hi'),
-(3, 6, 11, 'bye');
+(3, 6, 11, 'bye'),
+(4, 6, 41, 'Hello'),
+(5, 6, 41, 'Thank you Ahmad');
 
 -- --------------------------------------------------------
 
@@ -307,7 +327,9 @@ INSERT INTO `sub_categories` (`sub_category_id`, `sub_category_name`, `sub_categ
 (15, 'Hard Drives', 'A hard disk drive (HDD), hard disk, hard drive, or fixed disk[b] is an electro-mechanical data storage device that stores and retrieves digital data using magnetic storage and one or more rigid rapidly rotating platters coated with magnetic material. The platters are paired with magnetic heads, usually arranged on a moving actuator arm, which read and write data to the platter surfaces.', '../images/subCat/hard-drives-subctegory.jpg', 19),
 (16, 'Mobile Phones', 'A mobile phone, cellular phone, cell phone, cellphone, handphone, or hand phone, sometimes shortened to simply mobile, cell or just phone, is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area. The radio frequency link establishes a connection to the switching systems of a mobile phone operator, which provides access to the public switched telephone network (PSTN).', '../images/subCat/mobiles_subcategory.jpg', 19),
 (17, 'Plant Decorations', 'Few items make our houses cheerful like plants. Plants make a room lively and purify air. In this category you can test your green thumb choosing plants, vases and vase holders, beautiful vegetal tableaux and entire green walls. The best of international design is only here on Archiproducts!', '../images/subCat/plant4.jpg', 21),
-(18, 'Furniture', 'When choosing furniture, it is necessary to take into consideration the style that you wish to use in your own spaces. An interior design project includes a variety of products, articles and models in different shapes and materials, from leather and wood to metal and velvet finishes. From iconic pieces of classical inspiration to contemporary metal solutions, the composition of the furniture can involve the use of elements with common or contrasting characteristics, preferring an impressive mix&match. For this reason, it is essential to evaluate both aesthetics and functionality, to be sure of designing an environment that is both beautiful and comfortable.', '../images/subCat/furniture-subcategory.jpg', 21);
+(18, 'Furniture', 'When choosing furniture, it is necessary to take into consideration the style that you wish to use in your own spaces. An interior design project includes a variety of products, articles and models in different shapes and materials, from leather and wood to metal and velvet finishes. From iconic pieces of classical inspiration to contemporary metal solutions, the composition of the furniture can involve the use of elements with common or contrasting characteristics, preferring an impressive mix&match. For this reason, it is essential to evaluate both aesthetics and functionality, to be sure of designing an environment that is both beautiful and comfortable.', '../images/subCat/furniture-subcategory.jpg', 21),
+(19, 'Vases', 'A vase is an open container. It can be made from a number of materials, such as ceramics, glass, non-rusting metals, such as aluminium, brass, bronze, or stainless steel. Even wood has been used to make vases, either by using tree species that naturally resist rot, such as teak, or by applying a protective coating to conventional wood or plastic. Vases are often decorated, and they are often used to hold cut flowers. Vases come in different sizes to support whatever flower it is holding or keeping in place.', '../images/subCat/vases-sub-categories.jpg', 21),
+(20, 'Clocks', 'A clock is a device used to measure, keep, and indicate time. The clock is one of the oldest human inventions, meeting the need to measure intervals of time shorter than the natural units: the day, the lunar month, and the year. Devices operating on several physical processes have been used over the millennia.  Some predecessors to the modern clock may be considered as \"clocks\" that are based on movement in nature: A sundial shows the time by displaying the position of a shadow on a flat surface. There is a range of duration timers, a well-known example being the hourglass.', '../images/subCat/clock1.jpg', 21);
 
 --
 -- Indexes for dumped tables
@@ -411,31 +433,31 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `order_products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `order_products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `sub_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `sub_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

@@ -1,4 +1,5 @@
 <?php
+require_once("connection.php");
 if(!isset($_SESSION)){session_start();}
 if (!$_SESSION['admin_id']) {
     header("location:login.php");
@@ -108,32 +109,36 @@ $adminSet = mysqli_fetch_assoc($result);
                     <img src="../images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
-            <div class="menu-sidebar__content js-scrollbar1">
+            <div class="menu-sidebar__content js-scrollbar1" style="background-color:black;color:white">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="manage_admin.php">
-                                <i class="fas fa-chart-bar"></i>Manage Admin </a>
+                            <a href="manage_admin.php" style="color:white">
+                            <i class="fas fa-user"></i>Manage Admin </a>
                         </li>
                         <li>
-                            <a href="manage_customers.php">
-                                <i class="fas fa-chart-bar"></i>Manage Customers </a>
+                            <a href="manage_customers.php" style="color:white">
+                            <i class="fas fa-users"></i>Manage Customers </a>
                         </li>
                         <li>
-                            <a href="manage_categories.php">
-                                <i class="fas fa-chart-bar"></i>Manage Categories </a>
+                            <a href="manage_categories.php" style="color:white">
+                            <i class="fas fa-tag"></i>Manage Categories </a>
                         </li>
                         <li>
-                            <a href="manage_sub_cat.php">
-                                <i class="fas fa-chart-bar"></i>Manage SubCategories </a>
+                            <a href="manage_sub_cat.php" style="color:white">
+                            <i class="fas fa-tags"></i>Manage SubCategories </a>
                         </li>
                         <li>
-                            <a href="manage_brands.php">
-                                <i class="fas fa-chart-bar"></i>Manage Brands </a>
+                            <a href="manage_brands.php" style="color:white">
+                            <i class="fas fa-warehouse"></i>Manage Brands </a>
                         </li>
                         <li>
-                            <a href="manage_products.php">
-                                <i class="fas fa-chart-bar"></i>Manage Products </a>
+                            <a href="manage_products.php" style="color:white">
+                            <i class="fas fa-shopping-cart"></i>Manage Products </a>
+                        </li>
+                        <li>
+                            <a href="../public/index.php" style="color:white">
+                            <i class="fas fa-home"></i> Public Website</a>
                         </li>
                     </ul>
                 </nav>

@@ -128,7 +128,7 @@ $name=$matches[0][0];
 							// add the empty order
 							?>
 							<div class="col-lg-8 posts-list">
-								<div class="h-75 my-scroll" style="overflow-y:scroll ">
+								<div class="my-scroll" style=" height:400px;overflow-y:scroll ">
 								<?php 
 									while($row= mysqli_fetch_assoc($results)){
 								?>
@@ -170,11 +170,11 @@ $name=$matches[0][0];
                                 }
 								?>
 							</div>
-							</div>
-											</div>
-									</div>
-							</section>
-	<!--================Blog Area =================-->
+						</div>
+					</div>
+				</div>
+			</section>
+<!--================Blog Area =================-->
   
 <?php require('./includes/public_footer.php');?>
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>

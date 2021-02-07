@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $path        = '../images/brands/' . $brand_image;
         move_uploaded_file($tmp_name, $path);
     } else {
-        $brand_image = $brand_image_src;
+        $path = $brand_image_src;
     }
     $query = "update brands set brand_name ='$name',
                                 brand_logo = '$path'

@@ -85,7 +85,7 @@ if (isset($_REQUEST['submit'])) {
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                <img src="../images/icon/logo.png" alt="Admin" />                            
                             </a>
                         </div>
                         <div class="login-form">
@@ -101,7 +101,7 @@ if (isset($_REQUEST['submit'])) {
                                     <label>Password</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password"><span style="color: red;" class="error "><?php echo $passwordErr;?></span>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="submit">sign in</button>
+                                <button style='background-color: #384aec' class="au-btn au-btn--block m-b-20" type="submit" name="submit">sign in</button>
                             </form>
                         </div>
                     </div>

@@ -79,7 +79,7 @@ require_once("../db_connection.php");
               </form>
             </nav>
             </li>
-              <li class="nav-item"><a class="nav-link" href="cart.php"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">
+              <li class="nav-item"><a class="nav-link" href="cart.php"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle" id="cart_count">
                 <?php   
                 if (isset($_SESSION["order_products"])){
                   echo count($_SESSION["order_products"]);

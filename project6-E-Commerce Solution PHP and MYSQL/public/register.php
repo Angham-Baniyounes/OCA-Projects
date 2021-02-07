@@ -12,10 +12,6 @@ if ((isset($_SESSION['user'])))
 ?>
 
 <?php 
-
-//email for testing 
-// $email ='rami@mail.com'; $password = "12qw!@QW";
-
 	$email = $password = "";
 	$emailErr = $passwordErr = "";
 
@@ -58,15 +54,15 @@ if ((isset($_SESSION['user'])))
 			customer_password FROM customers
 			WHERE customer_email = '$email' AND 
 			customer_password = '$password'";
-            echo'<pre>';
             $result=mysqli_query($conn, $query);
-
-            if (($result)->num_rows>0) {
+            if (($result)->num_rows>=1) {
                 // this value is already exist
                 $emailErr= "This email {$email} is is already exist ";
-            } else {
-                // Prepare an insert customer to database
-                $sql = "INSERT INTO customers (customer_email,
+				
+            }
+			if(empty($emailErr)) {
+				// Prepare an insert customer to database
+				$sql = "INSERT INTO customers (customer_email,
 				customer_password) VALUES ('$email' ,'$password')";
 
 				mysqli_query($conn, $sql);
@@ -77,7 +73,7 @@ if ((isset($_SESSION['user'])))
 				$row    = mysqli_fetch_assoc($result3);
 				$_SESSION['user'] =$row['customer_id'];
 				header("location:index.php");
-            }
+			}
         }
     }
     
@@ -105,7 +101,6 @@ if ((isset($_SESSION['user'])))
 						<form class="row login_form" action="" method="POST" id="register_form" >
 
 							<div class="col-md-12 form-group">
-								<label for="">Email</label>
 								<input type="text" class="form-control" id="email" name="email" 
 								value="<?php echo $email;?>"
 								placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
@@ -113,7 +108,6 @@ if ((isset($_SESSION['user'])))
 							</div>
 							
              				<div class="col-md-12 form-group">
-								<label for="">Password</label>
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?php echo $password;?>" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'"><span style="color: red;" class="error "> <?php echo $passwordErr;?></span>
             				</div>
 							<div class="col-md-12 form-group">
@@ -130,93 +124,4 @@ if ((isset($_SESSION['user'])))
 
 
   <!--================ Start footer Area  =================-->	
-	<footer>
-		<div class="footer-area footer-only">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets ">
-							<h4 class="footer_title large_title">Our Mission</h4>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no 
-								divided deep moved us lan Gathering thing us land years living.
-							</p>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
-							</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Quick Links</h4>
-							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Gallery</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="img/gallery/r1.jpg" alt=""></li>
-								<li><img src="img/gallery/r2.jpg" alt=""></li>
-								<li><img src="img/gallery/r3.jpg" alt=""></li>
-								<li><img src="img/gallery/r5.jpg" alt=""></li>
-								<li><img src="img/gallery/r7.jpg" alt=""></li>
-								<li><img src="img/gallery/r8.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Contact Us</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span>
-									Head Office
-								</p>
-								<p>123, Main Street, Your City</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-phone"></span>
-									Phone Number
-								</p>
-								<p>
-									+123 456 7890 <br>
-									+123 456 7890
-								</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span>
-									Email
-								</p>
-								<p>
-									free@infoexample.com <br>
-									www.infoexample.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--================ End footer Area  =================-->
-
-
-
-  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="vendors/skrollr.min.js"></script>
-  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="vendors/jquery.ajaxchimp.min.js"></script>
-  <script src="vendors/mail-script.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <?php require("includes/public_footer.php");?>

@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $path        = '../images/categories/' . $cat_image;
         move_uploaded_file($tmp_name, $path);
     } else {
-        $cat_image = $cat_image_src;
+        $path = $cat_image_src;
     }
     $query = "UPDATE categories set category_name ='$cat_name',
                                 category_desc ='$cat_desc',

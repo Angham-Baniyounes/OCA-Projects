@@ -1,42 +1,52 @@
   <?php
+  // Page Title and Description
   $title = "AMADA | Confirmation";
   $desc = "we offer many categories of products for many brands with high quality to help you get your order in an easy and simple way.";
+  session_start();
   require("includes/public_header.php");
-  if(!isset($_SESSION["user"])){
+  if (!isset($_SESSION["user"])) {
     header("location:cart.php");
   }
-  $total_price=0;
-	function calculate_total($price){
-		$GLOBALS['total_price'] += $price;
-		if($GLOBALS["total_price"] != 0){
-			$_SESSION["total_price"]=$GLOBALS["total_price"];
-		}
+  // When Redirecting from PayPal
+  if (isset($_SESSION['order_products'])) {
+    unset($_SESSION["order_products"]);
+    echo "<script> document.getElementById('cart_count').innerHTML= 0 </script>";
   }
-  if(isset($_SESSION["last_order"])){
+  // Calculating the total price of the order
+  $total_price = 0;
+  function calculate_total($price)
+  {
+    $GLOBALS['total_price'] += $price;
+    if ($GLOBALS["total_price"] != 0) {
+      $_SESSION["total_price"] = $GLOBALS["total_price"];
+    }
+  }
+  // Getting the inserted order info
+  if(isset($_SESSION["last_order"])) {
     $query  = "SELECT * FROM orders WHERE order_id={$_SESSION['last_order']}";
-    $result = mysqli_query($conn,$query);
+    $result = mysqli_query($conn, $query);
     $order  = mysqli_fetch_assoc($result);
     $query2 = "SELECT * FROM products INNER JOIN order_products ON products.product_id=order_products.product_id WHERE order_products.order_id={$_SESSION['last_order']}";
-    $result2 = mysqli_query($conn,$query2);
+    $result2 = mysqli_query($conn, $query2);
   }
-  
+
   ?>
-	<!-- ================ start banner area ================= -->	
+  <!-- ================ start banner area ================= -->
   <section>
-	<div class="container mt-4">
-				<div>
-					<h1>Order Confirmation</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Order Confirmation</li>
-            </ol>
-          </nav>
-				</div>
-			</div>
+    <div class="container mt-4">
+      <div>
+        <h1>Order Confirmation</h1>
+        <nav aria-label="breadcrumb" class="banner-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Order Confirmation</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
   </section>
-	<!-- ================ end banner area ================= -->
-  
+  <!-- ================ end banner area ================= -->
+
   <!--================Order Details Area =================-->
   <section class="order_details section-margin--small mt-4">
     <div class="container">
@@ -69,19 +79,26 @@
           </div>
         </div>
         <div class="col-md-6 col-xl-8 mb-4 mb-xl-0">
-        <div class="order_details_table mt-0">
-        <h2>Order Details</h2>
-        <div class="table-responsive">
-          <table class="table">
-            <thead style="color:black">
-              <th>Product</th>
-              <th></th>
-              <th class="text-center">Total</th>
-            </thead>
-            <?php
-                while($order_products = mysqli_fetch_assoc($result2)){
-                  $quantity=$order_products["quantity"];
-                  $product_total_price=($order_products["product_price"]-($order_products["product_price"]*$order_products["discount"]))*$quantity;
+          <div class="order_details_table mt-0">
+            <h2>Order Details</h2>
+            <div class="table-responsive">
+              <table class="table">
+                <thead style="color:black">
+                  <th>Product</th>
+                  <th></th>
+                  <th class="text-center">Total</th>
+                </thead>
+                <?php
+                while ($order_products = mysqli_fetch_assoc($result2)) {
+                  $quantity            = $order_products["quantity"];
+                  $price               = $order_products["product_price"];
+                  $discount            = $order_products["discount"];
+                  if($discount != 1){
+                    $product_total_price = ($price   - ($price  * $discount)) * $quantity;
+                  }
+                  else{
+                    $product_total_price = $price * $quantity; 
+                  }
                   calculate_total($product_total_price);
                   echo "
                   <tbody>
@@ -92,7 +109,7 @@
                   </tr>
                   ";
                 }
-                echo"
+                echo "
                 <tr>
                   <td style='color:black'>SUBTOTAL</td>
                   <td class='text-center'></td>
@@ -106,15 +123,15 @@
                 </tr>
                 </tbody>
               ";
-              ?>
-          </table>
-        </div>
-      </div>
+                ?>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <!--================End Order Details Area =================-->
-  <?php 
-    require("includes/public_footer.php"); 
+  <?php
+  require("includes/public_footer.php");
   ?>

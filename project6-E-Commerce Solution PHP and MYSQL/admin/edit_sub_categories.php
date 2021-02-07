@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         $path        = '../images/subCat/' . $sub_cat_image;
         move_uploaded_file($tmp_name, $path);
     } else {
-        $sub_cat_image = $subCat_image_src;
+        $path = $subCat_image_src;
     }
 
     $query = "UPDATE sub_categories SET sub_category_name = '$subCat_name', sub_category_desc = '$subCat_desc', sub_category_image = '$path', category_id = '$category' WHERE sub_category_id = {$_GET['id']} ";

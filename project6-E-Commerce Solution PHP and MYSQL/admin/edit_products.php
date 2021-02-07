@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         $path        = '../images/products/'.$product_image;
         move_uploaded_file($tmp_name, $path);
     } else {
-        $product_image = $product_image_src;
+        $path = $product_image_src;
     }
 
     $query = "UPDATE products SET product_name = '$product_name', product_price = '$product_price', discount = $discount, product_desc = '$product_desc',product_image = '$path', product_quantity = $product_quantity , sub_category_id = $category, brand_id = $brand  WHERE product_id = {$_GET['id']} ";

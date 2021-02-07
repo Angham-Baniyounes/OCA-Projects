@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">Manage Categories</div>
+                        <div class="card-header text-center" style="background-color:black;color:white">Manage Categories</div>
                         <div class="card-body">
                             <div class="card-title">
                                 <h3 class="text-center title-2">Creat Categories</h3>
@@ -105,30 +105,7 @@ if (isset($_POST['submit'])) {
                         ?>
                     </tbody>
                 </table>
-                <nav>
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="?pageno=1">First</a></li>
-                        <li class="page-item <?php if ($pageno <= 1) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="<?php if ($pageno <= 1) {
-                                                            echo '#';
-                                                        } else {
-                                                            echo "?pageno=" . ($pageno - 1);
-                                                        } ?>">Prev</a>
-                        </li>
-                        <li class="page-item <?php if ($pageno >= $total_pages) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="<?php if ($pageno >= $total_pages) {
-                                                            echo '#';
-                                                        } else {
-                                                            echo "?pageno=" . ($pageno + 1);
-                                                        } ?>">Next</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
-                    </ul>
-                </nav>
+                <?php include("pagination.php") ?>
             </div>
             <!-- END DATA TABLE-->
         </div>

@@ -1,84 +1,22 @@
 <?php
-header("HTTP/1.0 404 Not Found");
+$title = "AMADA | Home";
+$desc = "we offer many categories of products for many brands with high quality to help you get your order in an easy and simple way.";
+require("../public/includes/public_header.php");
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <title>Document</title>
-</head>
-
-<body>
-
-
-
-    <!-- breadcrumb start -->
-    <div style="margin-top: 7rem;">
-
-
-        <div class="breadcrumb-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="page-title">
-                            <h2>404</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">404 page</li>
-                            </ol>
-                        </nav>
+<main class="site-main m-0 p-0">
+    <section class="offer m-0" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+        <div class="container m-0 p-0">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="offer__content text-center">
+                        <h3>OOPS!</h3>
+                        <h4>Seems You Lost Your Way</h4>
+                        <p>Lets Go Back and SHOP!</p>
+                        <a class="button button--active mt-3 mt-xl-4" href="../public/index.php">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- breadcrumb End -->
-
-
-        <!-- section start -->
-        <section class="p-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="error-section">
-                            <h2>page not found</h2>
-                            <a href="index.php" class="btn btn-solid">back to home</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Section ends -->
-    </div>
-</body>
-
-</html>
-<?php include('admin_footer.php') ?>
+    </section>
+</main>
+<?php require("../public/includes/public_footer.php"); ?>

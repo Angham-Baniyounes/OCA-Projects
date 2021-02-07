@@ -31,8 +31,10 @@
 
                     WHERE
                     p.product_name LIKE '%$terms%' || 
+                    p.product_desc LIKE '%$terms%' ||
                     c.category_name LIKE '%$terms%' || 
-                    s_c.sub_category_name LIKE '%$terms%'  
+                    s_c.sub_category_name LIKE '%$terms%'||
+                    b.brand_name LIKE '%$terms%'  
                     ";
                     $result = mysqli_query($conn, $query);
 

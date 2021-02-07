@@ -39,7 +39,7 @@ include('includes/admin_header.php'); ?>
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">Manage Brands</div>
+                        <div class="card-header text-center" style="background-color:black;color:white">Manage Brands</div>
                         <div class="card-body">
                             <div class="card-title">
                                 <h3 class="text-center title-2">Add Brand</h3>
@@ -69,7 +69,7 @@ include('includes/admin_header.php'); ?>
         <div class="col-md-12">
             <!-- DATA TABLE-->
             <div class="table-responsive m-b-40">
-                <table class="table table-borderless table-data3">
+                <table class="table table-borderless table-data3 text-center">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -95,31 +95,7 @@ include('includes/admin_header.php'); ?>
                         ?>
                     </tbody>
                 </table>
-                <nav class="mt-3">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="?pageno=1">First</a></li>
-                        <li class="page-item <?php if ($pageno <= 1) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="<?php if ($pageno <= 1) {
-                                                            echo '#';
-                                                        } else {
-                                                            echo "?pageno=" . ($pageno - 1);
-                                                        } ?>">Prev</a>
-                        </li>
-                        <li class="page-item <?php if ($pageno >= $total_pages) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="<?php if ($pageno >= $total_pages) {
-                                                            echo '#';
-                                                        } else {
-                                                            echo "?pageno=" . ($pageno + 1);
-                                                        } ?>">Next</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <?php include("pagination.php") ?>
             <!-- END DATA TABLE-->
         </div>
     </div>

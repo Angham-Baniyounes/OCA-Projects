@@ -61,7 +61,7 @@
                           while($row2=mysqli_fetch_assoc($result2)){
                             echo'
                               <li>
-                                <input class="pixel-radio" type="radio" name="sub_category" value="'.$row2["sub_category_id"].'"><label for="'.$row2["sub_category_id"].'">'.$row2["sub_category_name"].'<span> (3600)</span></label> 
+                                <input class="pixel-radio" type="radio" name="sub_category" value="'.$row2["sub_category_id"].'"><label for="'.$row2["sub_category_id"].'">'.$row2["sub_category_name"].'</label> 
                               </li>
                             ';
                           }
