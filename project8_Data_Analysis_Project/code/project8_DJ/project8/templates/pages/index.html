@@ -1,0 +1,196 @@
+{% extends "pages/layout.html" %} {% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+   <div class="row col-md-12 col-sm-12">
+  <div class="col-md-4 col-sm-4"> </div>
+   <div class="col-md-4 col-sm-4"> 
+     <div class="x_title">
+      <h1 class='text-center'> Home Page <h1>
+      <div class="clearfix"></div>
+     </div></div>
+     <div class="col-md-4 col-sm-4"> </div>
+   </div>
+   <div class="row col-md-12 col-sm-12">
+   <div class="col-md-12 col-sm-12" style="
+    margin-bottom: 3rem;
+"> 
+     <div class="x_title">
+          <h3 class='text-center'>Statistical Analysis</h3>
+          <div class="clearfix"></div>
+     </div>
+     </div>
+   </div>
+  <div class="row col-md-12 col-sm-12">
+    {% comment %}
+    <div class="col-md-4">
+      <div class="border p-3 shadow">
+        <h4>Add Data</h4>
+        <hr />
+        <form action="" method="POST">
+          {% csrf_token %} {{ form}}
+          <input class="btn btn-success btn-block" type="submit" value="Add" />
+        </form>
+      </div>
+    </div>
+    {% endcomment %}
+    <div class="col-md-6 col-sm-6" style=" border: 3px solid;">
+      <canvas id="myChart" width="300" height="200"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for data in data%} '{{ data.speciality }}', {% endfor %}],
+                datasets: [{
+                    data: [{% for data in data %} '{{ data.total }}', {% endfor %}],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(215, 139, 40, 1)',
+                        'rgba(60, 162, 235, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(215, 139, 40, 1)',
+                        'rgba(60, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+      </script>
+    </div>
+    <div class="col-md-6 col-sm-6" style=" border: 3px solid;">
+      <canvas id="chart1" width="300" height="200"></canvas>
+      <script>
+        var ctx = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [{% for data in gender %} '{{ data.gender }}', {% endfor %}],
+                datasets: [{
+                    label: 'Gender Percentage',
+                    data: [{% for data in gender %} '{{ data.total }}', {% endfor %}],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+      </script>
+    </div>
+    <div class="col-md-6 col-sm-6" style=" border: 3px solid;">
+      <canvas id="chart2" width="300" height="200"></canvas>
+      <script>
+        var ctx = document.getElementById('chart2').getContext('2d');
+        var chart2 = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [{% for data in degree %} '{{ data.degree }}', {% endfor %}],
+                datasets: [{
+                    label: 'Address',
+                    data: [{% for data in degree %} '{{ data.total }}', {% endfor %}],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(100, 99, 33, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(100, 99, 33, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+      </script>
+    </div>
+    <div class="col-md-6 col-sm-6" style=" border: 3px solid;">
+      <canvas id="chart3" width="300" height="200"></canvas>
+      <script>
+        var ctx = document.getElementById('chart3').getContext('2d');
+        var chart3 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for data in source %} '{{ data.name_data_source }}', {% endfor %}],
+                datasets: [{
+                    label: 'Gender Percentage',
+                    data: [{% for data in source %} '{{ data.total }}', {% endfor %}],
+                    backgroundColor: [
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(215, 139, 40, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(215, 139, 40, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+      </script>
+    </div>
+  </div>
+ 
+</div>
+<!-- /page content -->
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "pages/layout.html" %} {% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Form Upload</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search for..."
+            />
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="x_panel">
+          <div class="x_content">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="col-md-3 col-sm-3 form-group has-feedback">
+                <label
+                  for="option"
+                  style="margin: 0.5rem; font-size: 1rem; color: black"
+                  >Choose Data Source:</label
+                >
+                <select id="option" name="option">
+                  {% for source in datasource %}
+                  <option value="{{source.id}}">
+                    {{source.name_data_source}}
+                  </option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-3 col-sm-3 form-group has-feedback">
+                <input
+                  type="file"
+                  name="file"
+                  class="form-control"
+                  style="padding-top: 0.3rem; padding-bottom: 2.3rem"
+                />
+              </div>
+
+              <div class="col-md-3 col-sm-3 text-center">
+                <button type="submit" class="btn btn-success">Upload</button>
+              </div>
+            </form>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+{% endblock %}

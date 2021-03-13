@@ -1,0 +1,74 @@
+{% extends "pages/layout.html" %} {% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Tables</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+          <div class="input-group">
+            <form method="post" action="">
+              {% csrf_token %}
+              <input
+                name="search_string"
+                type="text"
+                class="form-control"
+                placeholder="Search for..."
+              />
+              <input class="btn btn-default" type="submit" value=" Go!" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row" style="display: block">
+      <div class="col-md-12 col-sm-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Table design</h2>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title">NID</th>
+                    <th class="column-title">Full Name</th>
+                    <th class="column-title">Gender</th>
+                    <th class="column-title">Degree</th>
+                    <th class="column-title">Speciality</th>
+                    <th class="column-title">Address</th>
+                    <th class="column-title">DataSet / DataSourse</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for teacher in teachers %}
+                  <tr class="even pointer">
+                    <td>{{ teacher.NID }}</td>
+                    <td>{{ teacher.full_name }}</td>
+                    <td>{{ teacher.gender }}</td>
+                    <td>{{ teacher.degree }}</td>
+                    <td>{{ teacher.speciality }}</td>
+                    <td>{{ teacher.address }}</td>
+                    <td>{{ teacher.dataset }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+{% endblock %}
